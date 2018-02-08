@@ -1,0 +1,467 @@
+a {
+  color: black;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+  line-height: 1.25em;
+}
+
+.acme-navbar-text {
+  color: green;
+}
+
+// $columns = 6
+// @mixin col-x {
+@for $i from 0 through 5 {
+  .arrow-#{$i} {
+    margin-left: 6% +(17*$i);
+  }
+}
+.g-nav-links{
+  display: inline-block;
+  outline: none;
+  vertical-align: middle;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+
+
+  background-image: url(//ssl.gstatic.com/gb/images/v1_da9d8cff.png);
+  -webkit-background-size: 92px 2835px;
+  background-size: 92px 2835px;
+
+}
+
+#bs-example-navbar-collapse {
+  ul {
+    margin-bottom: -1px;
+    margin-left: 7em;
+  }
+  ul li {
+    display: inline;
+    text-align: center;
+    line-height: 15px;
+    padding: 1px 17px 3px; // a {
+    display: inline-block;
+    text-decoration: none;
+    color: #777;
+    &:hover {
+      // font-weight: bold;
+      border:none;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    &:focus {
+      border-bottom: 3px solid #1A73E8;
+      font-weight: bold;
+      color: #1A73E8;
+    } // }
+    a{
+      &:hover{
+        text-decoration: none;
+        color: black;
+      }
+      &:focus{
+        text-decoration: none;
+        color: #1A73E8;
+        font-weight: bold;
+        border-bottom: 3px solid #1A73E8;
+        outline: none;
+        outline-offset: 0;
+      }
+    }
+    // transition: .3s ease-in-out;
+  }
+} // .three:active~hr {
+//   margin-left: 50%;
+// }
+// .four:active~hr {
+//   margin-left: 75%;
+// }
+// hr {
+//   height: .25rem;
+//   width: 10%;
+//   margin: 0;
+//   background: #1A73E8;
+//   border: none;
+// }
+// }
+.arrow-up {
+  border-bottom: 10px solid #222;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  position: absolute;
+  top: -10px;
+  width: 0;
+}
+
+.navbar {
+  background-color: #fafafa;
+  border-bottom: 1px solid #ebebeb;
+  .navbar-brand {
+    height: auto;
+    margin-top: 11px;
+  }
+}
+
+#logo {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.g-searchInput {
+  height: 3.1em;
+  margin: 2em 0em 1em 0;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  width: 45%;
+  background: url(https://images.onlinelabels.com/images/clip-art/sarxos/sarxos_Magnifying_Glass.png) no-repeat scroll 7px 7px;
+  padding-left: 17px; // background: url(data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D) transparent;
+  outline: none;
+  background-color: white;
+  &:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+.g-search-svg {
+  color: #1A73E8;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  line-height: 24px;
+  position: absolute;
+  width: 24px;
+  margin: 3% 1% 12% -3%;
+}
+
+// .chips-row {
+// box-sizing: border-box;
+// padding: 0 10px;
+// white-space: nowrap;
+// width: 100%;
+// margin-left: 20px;
+// margin-bottom: 10px;
+.chips {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  display: inline-block;
+  height: 49px;
+  margin-right: 8px; // overflow: hidden;
+  padding: 0 16px;
+  background-color: #009688;
+  border-color: #009688;
+  &:hover{
+    text-decoration: none;
+  }
+  &:focus{
+    text-decoration: none;
+  }
+  .chips-text {
+    color: rgba(255, 255, 255, .8);
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 49px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+// }
+.centered {
+  display: none;
+}
+
+.g-container {
+  padding: 5px;
+  position: relative;
+  .g-row {
+    margin-left: -7px;
+    margin-right: -5px;
+
+    .g-card {
+      display: inline;
+      margin-right: -3px;
+      padding-bottom: 10px;
+      // max-width: 15.5em;
+      cursor: pointer;
+      .g-link {
+        // margin:2em;
+        .google-img {
+          height: 181px !important;
+width: 15.2em !important; 
+
+        }
+        &:hover {
+          .centered {
+            width: 94%;
+            height: 8%;
+            bottom: 1%;
+            position: absolute;
+            transform: translate(0%, -57%);
+            font-size: 11px;
+            background: rgba(0, 0, 0, 0.52);
+            display: -webkit-box;
+            color: white;
+            p {
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+    }
+    .g-popup {
+      width: 103%;
+      margin-left: -21px;
+      background-color: #222;
+      height: 27.7em;
+      display: inline-block;
+      .container-img-pop {
+        background-image: linear-gradient(#111, #111), // Above css will create background image that looks like a border.
+        linear-gradient(#222, #222); // This will create background image for the container.
+        background-repeat: no-repeat;
+        background-size: 1px 81%, 0px 100%;
+        background-position: right center, 4px 0;
+        .pop-img {
+          vertical-align: middle; // border-right: solid 1px #111;
+          width: 43em;
+          margin: 3em;
+          height: 22em;
+          box-shadow: 0 5px 35px rgba(0, 0, 0, .65);
+        }
+      }
+      .container-right-pop {
+        // padding: 0em 5em;
+        .pop-right-top {
+          height: 10em;
+          border-bottom: 1px solid #121212;
+          box-shadow: 0 1px #2A2A2A;
+          margin: 20px 37px 44px -15px;
+          .padding-left-3 {
+            padding-left: 3em;
+          }
+          .link-header-txt {
+            color: #d6d6d6;
+            display: block;
+            font-size: 22px;
+            overflow: hidden;
+            text-decoration: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .table-link {
+            padding: 3px;
+            &:active {
+              color: #dd4b39;
+            }
+            &:hover {
+              background-image: -webkit-linear-gradient(top, #4e4e4e, #474747);
+              border: 1px solid #191919;
+              box-shadow: 0 1px 0 rgba(255, 255, 255, .09), 1px 1px 0 rgba(255, 255, 255, .05), -1px -1px 0 rgba(0, 0, 0, .02), inset 1px 1px 0 rgba(255, 255, 255, .05);
+            }
+            width: 6em;
+            height: 37px;
+            background-color: #454545;
+            background-image: -webkit-linear-gradient(top, #3e3e3e, #333);
+            border: 1px solid #141414;
+            box-sizing: border-box;
+            border-radius: 2px;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, .06),
+            1px 1px 0 rgba(255, 255, 255, .03),
+            -1px -1px 0 rgba(0, 0, 0, .02),
+            inset 1px 1px 0 rgba(255, 255, 255, .05);
+            color: #aaa;
+            cursor: pointer;
+            display: inline-table;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 10px;
+            outline: 0;
+            padding: 5px 8px;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
+            vertical-align: middle;
+            white-space: normal;
+            word-wrap: normal;
+            .svg-table {
+              height: 14px;
+              fill: currentColor
+            }
+          }
+        }
+        .pop-right-bottom {
+          margin: -33px 2px 13px 25px;
+          color: #888;
+          .rel-img-div {
+            width: 31em;
+            .rel-img {
+              width: 85px;
+              padding: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//////////////////////////////////
+// * {
+//   box-sizing: inherit;
+// }
+$colors: red,
+orange,
+yellow,
+green,
+blue,
+purple;
+@for $i from 1 through length($colors) {
+  .ProductNav_Link:nth-child(#{length($colors)}n+#{$i}) {
+    background-color: lighten(nth($colors, $i), 20%);
+  }
+}
+
+.pn-ProductNav_Wrapper {
+  position: relative;
+  padding: 0px 2px 14px 7px;
+  box-sizing: border-box;
+}
+
+.pn-ProductNav {
+  /* Make this scrollable when needed */
+  overflow-x: auto;
+  /* We don't want vertical scrolling */
+  overflow-y: hidden;
+  /* For WebKit implementations, provide inertia scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* We don't want internal inline elements to wrap */
+  white-space: nowrap;
+  /* If JS present, let's hide the default scrollbar */
+  .js & {
+    /* Make an auto-hiding scroller for the 3 people using a IE */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    /* Remove the default scrollbar for WebKit implementations */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  /* positioning context for advancers */
+  position: relative; // Crush the whitespace here
+  font-size: 0;
+}
+
+.pn-ProductNav_Contents {
+  float: left;
+  transition: transform .2s ease-in-out;
+  position: relative;
+}
+
+.pn-ProductNav_Contents-no-transition {
+  transition: none;
+}
+
+.pn-ProductNav_Link {
+  text-decoration: none;
+  color: #888; // Reset the font size
+  font-size: 1.2rem;
+  font-family: -apple-system, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border: 1px solid transparent;
+  padding: 0 11px;
+  &:hover {
+    color: #888;
+  }
+  &+& {
+    border-left-color: #eee;
+  }
+  // &[aria-selected="true"] {
+  //   color: #111;
+  // }
+}
+
+.pn-Advancer {
+  /* Reset the button */
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border: 0;
+      height: 49px;
+      width: 24px;
+
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  /* Now style it as needed */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  /* Set the buttons invisible by default */
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.pn-Advancer_Left {
+    background-color: rgba(229, 229, 229, .8);
+    border-bottom-right-radius: 36px;
+    border-top-right-radius: 36px;
+    box-shadow: -1px 0 2px rgba(0, 0, 0, 0.5);
+    box-shadow: -1px 0 2px rgba(0, 0, 0, 0.5);
+
+
+  left: 0;
+  [data-overflowing="both"]~&,
+  [data-overflowing="left"]~& {
+    opacity: 1;
+  }
+}
+
+.pn-Advancer_Right {
+  background-color: rgba(229, 229, 229, .8);
+      border-bottom-left-radius: 36px;
+    border-top-left-radius: 36px;
+    box-shadow: -1px 0 2px rgba(0, 0, 0, 0.5);
+    box-shadow: -1px 0 2px rgba(0, 0, 0, 0.5);
+
+  right: 0;
+  [data-overflowing="both"]~&,
+  [data-overflowing="right"]~& {
+    opacity: 1;
+  }
+}
+
+.pn-Advancer_Icon {
+  width: 20px;
+  height: 25px;
+  fill: #111;
+
+}
+
+.pn-ProductNav_Indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100px;
+  background-color: transparent;
+  transform-origin: 0 0;
+  transition: transform .2s ease-in-out, background-color .2s ease-in-out;
+}
+
+////////////////////////////////////////

@@ -1,0 +1,163 @@
+<acme-navbar creation-date="main.creationDate"></acme-navbar>
+<div class=" g-container" scroll-to-end>
+  <!-- 
+  <div class="jumbotron text-center">
+    <h1>'Allo, 'Allo!</h1>
+    <p class="lead">
+      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
+      Always a pleasure scaffolding your apps.
+    </p>
+    <p class="animated infinite" ng-class="main.classAnimation">
+      <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
+    </p>
+   
+  </div> -->
+  <div class="pn-ProductNav_Wrapper">
+    <nav id="pnProductNav" class="pn-ProductNav">
+
+      <div id="pnProductNavContents" class="pn-ProductNav_Contents">
+          <a href="#" ng-repeat="chip in main.chipsObj" class="chips pn-ProductNav_Link" ng-click="main.fetchSearch(chip)">
+            <span class="chips-text">
+              {{chip}}
+            </span>
+          </a>
+        <a href="#" class="pn-ProductNav_Link" aria-selected="true" ng-show="0">Chairs</a>
+<!--       
+        <a href="#" class="pn-ProductNav_Link">Worktops</a> -->
+        <span id="pnIndicator" class="pn-ProductNav_Indicator" ></span>
+      </div>
+
+      
+    </nav>
+    <button id="pnAdvancerLeft" class="pn-Advancer pn-Advancer_Left" type="button">
+      <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024">
+        <path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z" />
+      </svg>
+    </button>
+    <button id="pnAdvancerRight" class="pn-Advancer pn-Advancer_Right" type="button">
+      <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024">
+        <path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z" />
+      </svg>
+    </button>
+  </div>
+<!-- 
+  
+  <div class="row ">
+    <div class="chips-row">
+      <div ng-repeat="chip in main.chipsObj" style="display:inline;cursor:pointer">
+        <a class="chips" ng-click="main.fetchSearch(chip)">
+          <span class="chips-text">
+            {{chip}}
+          </span>
+        </a>
+        
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row g-row">
+    <div ng-class="{'col-sm-4 col-md-2 g-card' :photo.id != 0 , 'col-sm-12': photo.id == 0}" ng-repeat="photo in main.items.photo track by photo.id">
+      <!-- <div class="  card"> -->
+      <a class="g-link" ng-click="main.showpopUp($index)" ng-if="photo.id != 0">
+
+        <img class=" google-img" style="" ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_q.jpg"
+          alt="{{photo.id }}">
+        <div class="centered" ng-class="caption-{{$index}}">
+          <p>
+            {{photo.title}}
+          </p>
+        </div>
+      </a>
+      <div ng-if="photo.id == 0" id="popup" >
+        <div class="arrow-up" ng-class="arrow-{{main.itemCol}}" ng-if="0"></div>
+          <div class="g-popup row">
+            <div class="col-sm-7 container-img-pop">
+              <span>
+              <img class=" google-img pop-img" ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_c.jpg"/>
+              </span>
+            </div>
+            <div class="col-sm-5 container-right-pop">
+              <div class="row pop-right-top">
+                <div class="padding-left-3">
+                  <a target="_blank" class="link-header-txt">{{photo.title || '...'}}</a>
+                  <div style="display:inline;color:#7d7d7d">
+                    <span><p>Website.com - 800 x 800 - Search by image </p></span>
+                    <span style="width: 33em; overflow: hidden; height: 21px; text-overflow: clip;"><p> {{photo.title}}</p></span>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <a class="table-link" ng-href="https://www.flickr.com/search/?text={{main.searchText}}">
+                              <span style="display: table-cell; vertical-align: middle;padding: 3px;">
+                                 Visit
+                              </span>
+                            </a>
+                          </td>
+                          <td>
+                            <a class="table-link" target="_blank" ng-href="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_c.jpg">
+                              <span style="display: table-cell; vertical-align: middle;padding: 3px;">
+                                View Image 
+                              </span>
+                            </a>
+                          </td>
+                          <td>
+                            <a class="table-link">
+                              <span></span>
+                              <span style="display: table-cell; vertical-align: middle;padding: 3px;">
+                                Save
+                              </span>
+                            </a>
+                          </td>
+                          <td>
+                            <a class="table-link">
+                              <span style="display: table-cell; vertical-align: middle;padding: 3px;">
+                                View Saved
+                              </span>
+                            </a>
+                          </td>
+                          <td>
+                            <a class="table-link">
+                              <span style="display: table-cell; vertical-align: middle;padding: 3px;">
+                                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-table">
+                                  <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"></path>
+                                </svg>
+                                <span>
+                                  Share
+                                </span>
+                              </span>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+            </div>
+              <div class="row pop-right-bottom">
+                <span style="position: relative; color: #9f9f9f; font-size: 13px; text-decoration: none;">Related Images : </span>
+                <div class="rel-img-div">
+              <img class="rel-img " ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_s.jpg"/>
+              <img class="rel-img " ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_s.jpg"/>
+              <img class="rel-img " ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_s.jpg"/>
+              <img class="rel-img " ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_s.jpg"/>
+              <img class="rel-img " ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_s.jpg"/>
+              <img class="rel-img " ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_s.jpg"/>
+              <img class="rel-img " ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_s.jpg"/>
+              <img class="rel-img " ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_s.jpg"/>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+
+    <!-- loader -->
+    <div ng-if="0">
+      <img style="margin-left: 41%;" height="150" ng-click="main.nextPage()"  width="180" src="http://gifimage.net/wp-content/uploads/2017/11/gif-loader-image-4.gif"
+      />
+    </div>
+  </div>
+</div>
