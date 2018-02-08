@@ -93,7 +93,7 @@
       } else {
         if (vm.popupShown == true) {
           // if another image is clicked while popup shown
-          clickedIndex--;
+          // clickedIndex--;
           // if (index > 6 * PopRow)
            index--;
           var PopRowPrev = Number.isInteger(clickedIndex / 6) ? Math.ceil(clickedIndex + 1 / 6) : Math.ceil(clickedIndex / 6);
@@ -166,27 +166,6 @@
 
     //     }
     // });
-
-
-
-    // angular.element($window).bind("scroll", function () {
-    //   var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-    //   var body = document.body,
-    //     html = document.documentElement;
-    //   var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-    //   var windowBottom = windowHeight + window.pageYOffset;
-    //   if (windowBottom >= docHeight && vm.items > 0) {
-    //     alert("bottom reached");
-    //     // $timeout(function () {
-    //       // vm.classAnimation = "rubberBand";
-    //     // }, 300);
-    //   }
-    // });
-
-
-
-
-
 
 
 
