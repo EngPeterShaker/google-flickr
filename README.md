@@ -5,3 +5,6 @@ Steps :
 - npm install 
 - bower install 
 - gulp serve
+
+
+And let the magic starts !! 
