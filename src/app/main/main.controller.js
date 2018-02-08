@@ -10,39 +10,26 @@
     var vm = this;
 
     vm.items = [];
-    vm.classAnimation = "";
-    vm.searchText = "glass";
+    // vm.classAnimation = "";
+    vm.searchText = "cars";
     var clickedIndex = null;
     vm.popupShown = false;
     vm.creationDate = 1517910008806;
-    vm.showToastr = showToastr;
+    // vm.showToastr = showToastr;
     vm.fetchSearch = fetchSearch;
     vm.showpopUp = showpopUp;
     vm.nextPage = nextPage;
-    vm.chipsObj = ["peter", "nature Sky ", "school", "cars", "library", "flowers", "Mobile", "Camaro", "lamborghini", "Oil Petrol", "fruits", "Bicycle", "trees", "buildings", "Lighting", "Curtains", "Books", "Truck"];
+    vm.chipsObj = ["peter", "nature Sky ", "school", "cars", "library", "flowers", "Mobile", "Camaro", "lamborghini", "Oil Petrol", "fruits", "Bicycle", "trees", "buildings", "Lighting", "Curtains", "Books", "Trucks", "Lightings", "Curtain", "Book"];
 
-    activate();
-
-    function activate() {
-      // getWebDevTec();
-      // $timeout(function () {
-      //   vm.classAnimation = "rubberBand";
-      // }, 4000);
-    }
-
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = "";
-    }
-
-    // function getWebDevTec() {
-    //   vm.awesomeThings = webDevTec.getTec();
-
-    //   angular.forEach(vm.awesomeThings, function (awesomeThing) {
-    //     awesomeThing.rank = Math.random();
-    //   });
+  
+    // function showToastr() {
+    //   toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
+    //   vm.classAnimation = "";
     // }
 
+    var SETTINGS = { navBarTravelling: false, navBarTravelDirection: "", navBarTravelDistance: 150 };
+
+    vm.chipsColours = { 0: "#009688", 1: "#00bcd4", 2: "#3f51b5", 3: "#3f51b5", 4: "#14CC99", 5: "#673ab7", 6: "#0082B2", 7: "#B25D7A", 8: "#00FF17", 9: "#006B49", 10: "#00B27A", 11: "#996B3D", 12: "#CC7014", 13: "#40FF8C", 14: "#FF3400", 15: "#ECBB5E", 16: "#ECBB0C", 17: "#B9D912", 18: "#253A93", 19: "#FF3400" };
     // , Secret: "6fe1e556757f454e",
 
     var FlickrAuth = {
@@ -57,6 +44,8 @@
     var Search = $resource("https://api.flickr.com/services/rest/?method=flickr.photos.search");
 
     function fetchSearch(text) {
+          vm.items.photo = [];
+      
       console.log(FlickrAuth)
       if (text) {
         FlickrAuth.text = text;
@@ -70,7 +59,6 @@
           vm.items.photo = tempArr;
           console.log(vm.items.photo);
         } else {
-          vm.items = [];
           // vm.totalPhotos = result.photos.photo;
           // vm.items.photo = vm.totalPhotos.slice(0,90);
           vm.items.photo = result.photos.photo;
@@ -93,9 +81,10 @@
       } else {
         if (vm.popupShown == true) {
           // if another image is clicked while popup shown
-          // clickedIndex--;
-          // if (index > 6 * PopRow)
-           index--;
+          if (index > clickedIndex) {
+            index--;
+          clickedIndex--;
+          }            
           var PopRowPrev = Number.isInteger(clickedIndex / 6) ? Math.ceil(clickedIndex + 1 / 6) : Math.ceil(clickedIndex / 6);
           vm.items.photo.splice(6 * PopRowPrev, 1);
         }
@@ -120,13 +109,8 @@
     }
 
     function calcCol(index) {
-      // console.log(index);
       if (vm.popupShown && index > clickedIndex) index--;
       vm.itemCol = index - (6 * Math.floor(index / 6));
-      // console.log(vm.itemCol);
-      //   var container = document.getElementsByClassName("g-container");
-      //   var popup = document.getElementById("popup"); 
-
     }
 
     $rootScope.$on("searchFnEmit", function (event, data) {
@@ -139,64 +123,10 @@
 
     function nextPage() {
       index++;
-      // tempArr.push(result.photos.photo);
-
       vm.items.photo.push(vm.totalPhotos.slice(0 + (90 * indexed), 90 + (90 * indexed)));
       console.log(vm.items.photo)
-      //  FlickrAuth.page = 2;
-      // fetchSearch();
-
     };
 
-
-    // angular.element($window).bind("scroll", function() {
-    //     var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-    //     var body = document.body, html = document.documentElement;
-    //     var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
-    //     var windowBottom = windowHeight + window.pageYOffset;
-    //     if (windowBottom >= docHeight && vm.items.photo.length > 0) {
-    //       $timeout(function () {
-    //         alert('bottom reachedbs ');
-
-    //               FlickrAuth.page = 2;
-    //         //       // console.log(FlickrAuth);
-    // fetchSearch();
-    //               fetchSearch();
-    //         }, 3000);
-
-    //     }
-    // });
-
-
-
-    var SETTINGS = {
-      navBarTravelling: false,
-      navBarTravelDirection: "",
-      navBarTravelDistance: 150
-    };
-
-    var colours = {
-      0: "#867100",
-      1: "#7F4200",
-      2: "#99813D",
-      3: "#40FEFF",
-      4: "#14CC99",
-      5: "#00BAFF",
-      6: "#0082B2",
-      7: "#B25D7A",
-      8: "#00FF17",
-      9: "#006B49",
-      10: "#00B27A",
-      11: "#996B3D",
-      12: "#CC7014",
-      13: "#40FF8C",
-      14: "#FF3400",
-      15: "#ECBB5E",
-      16: "#ECBB0C",
-      17: "#B9D912",
-      18: "#253A93",
-      19: "#125FB9"
-    };
 
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
@@ -314,7 +244,7 @@
       });
       e.target.setAttribute("aria-selected", "true");
       // Pass the clicked item and it's colour to the move indicator function
-      moveIndicator(e.target, colours[links.indexOf(e.target)]);
+      // moveIndicator(e.target, colours[links.indexOf(e.target)]);
     });
 
     // var count = 0;

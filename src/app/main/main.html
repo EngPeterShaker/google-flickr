@@ -1,22 +1,11 @@
 <acme-navbar creation-date="main.creationDate"></acme-navbar>
 <div class=" g-container" scroll-to-end>
-  <!-- 
-  <div class="jumbotron text-center">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p class="animated infinite" ng-class="main.classAnimation">
-      <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
-    </p>
-   
-  </div> -->
   <div class="pn-ProductNav_Wrapper">
     <nav id="pnProductNav" class="pn-ProductNav">
 
       <div id="pnProductNavContents" class="pn-ProductNav_Contents">
-          <a href="#" ng-repeat="chip in main.chipsObj" class="chips pn-ProductNav_Link" ng-click="main.fetchSearch(chip)">
+          <a href="#" ng-repeat="chip in main.chipsObj" class="chips pn-ProductNav_Link" 
+          ng-style="{'background-color':main.chipsColours[$index]}" ng-click="main.fetchSearch(chip)" ng-show="!$last">
             <span class="chips-text">
               {{chip}}
             </span>
@@ -68,9 +57,9 @@
           </p>
         </div>
       </a>
-      <div ng-show="photo.id == 0" id="popup" >
+      <div  id="popup">
         <div class="arrow-up" ng-class="arrow-{{main.itemCol}}" ng-if="0"></div>
-          <div class="g-popup row">
+          <div class="g-popup row" ng-show="photo.id == 0" >
             <div class="col-sm-7 container-img-pop">
               <span>
               <img class=" google-img pop-img" ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.newID}}_{{photo.secret}}_c.jpg"/>
@@ -82,7 +71,8 @@
                   <a target="_blank" class="link-header-txt">{{photo.title || '...'}}</a>
                   <div style="display:inline;color:#7d7d7d">
                     <span><p>Website.com - 800 x 800 - Search by image </p></span>
-                    <span style="width: 33em; overflow: hidden; height: 21px; text-overflow: clip;"><p> {{photo.title}}</p></span>
+                    <span style="width: 33em; overflow: hidden; height: 21px; text-overflow: clip;">
+                      <p style="overflow-y: hidden;height: 18px;"> {{photo.title}}</p></span>
                     <table>
                       <tbody>
                         <tr>
@@ -155,7 +145,7 @@
 
 
     <!-- loader -->
-    <div ng-if="0">
+    <div ng-if="main.items.photo.length == 0">
       <img style="margin-left: 41%;" height="150" ng-click="main.nextPage()"  width="180" src="http://gifimage.net/wp-content/uploads/2017/11/gif-loader-image-4.gif"
       />
     </div>
