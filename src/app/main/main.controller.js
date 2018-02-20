@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, $document, $resource, $scope, $rootScope, $window) {
+  function MainController($timeout, webDevTec, toastr, $resource, $scope, $rootScope, $window) {
     var vm = this;
 
     vm.items = [];
@@ -21,6 +21,7 @@
     vm.nextPage = nextPage;
     vm.chipsObj = ["peter", "nature Sky ", "school", "cars", "library", "flowers", "Mobile", "Camaro", "lamborghini", "Oil Petrol", "fruits", "Bicycle", "trees", "buildings", "Lighting", "Curtains", "Books", "Trucks", "Lightings", "Curtain", "Book"];
 
+  
     // function showToastr() {
     //   toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
     //   vm.classAnimation = "";

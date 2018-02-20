@@ -5,7 +5,7 @@
 
       <div id="pnProductNavContents" class="pn-ProductNav_Contents">
           <a href="#" ng-repeat="chip in main.chipsObj" class="chips pn-ProductNav_Link" 
-          ng-style="{'background-color':main.chipsColours[$index],'border-color':main.chipsColours[$index]}" ng-click="main.fetchSearch(chip)" ng-show="!$last">
+          ng-style="{'background-color':main.chipsColours[$index]}" ng-click="main.fetchSearch(chip)" ng-show="!$last">
             <span class="chips-text">
               {{chip}}
             </span>
